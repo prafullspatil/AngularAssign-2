@@ -1,0 +1,32 @@
+<div class="card container-fluid mt-5 shadow" style="width: 40rem;height: 400px;">
+  <div class="error d-flex justify-content-center mt-5 align-items-center" id="main">
+    <!-- <h1>Login</h1> -->
+    <form [formGroup]="loginForm">
+      <h1>Login</h1>
+      <div class="mb-3 ">
+        <label for="exampleInputEmail1" class="form-label"><b>Email address</b></label>
+        <input type="email" formControlName="email" class="form-control input" autocomplete="off"
+          placeholder="Please Enter Your Email" id="exampleInputEmail1" aria-describedby="emailHelp" required ngModel>
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        <!-- <span class="text danger" ngIf>*Email Address Required & Should be Valid</span> -->
+        <span class="text-danger small"
+          *ngIf="email && email.invalid && email.touched">*Email Address required
+          & Should be Valid</span>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"><b>Password</b></label>
+        <input type="password" formControlName="password" class="form-control input" id="exampleInputPassword1"
+          autocomplete="off" placeholder="Please Enter Your Password" ngModel>
+        <span class="text-danger small"
+          *ngIf="password && password.invalid && password.touched">*Password
+          is Required & Should be Valid</span>
+      </div>
+      <!-- <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+      <button type="submit" class="btn btn-primary input " (click)="login()"><b>Login</b></button>
+    </form>
+
+  </div>
+</div>

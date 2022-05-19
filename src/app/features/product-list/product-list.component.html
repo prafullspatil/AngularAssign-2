@@ -1,0 +1,36 @@
+<div class="container tbl-container section">
+    <div class="row tbl-fixed">
+        <table class="table  text-center table-condensed" id='tab'>
+            <!-- =========Products Heading========= -->
+            <thead>
+                <tr>
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Stock Unit</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- =========Displaying Product List========= -->
+                <tr *ngFor="let p of productData;">
+                    <td>{{ p.product_id }}</td>
+                    <td>{{ p.product_name | uppercase}}</td>
+                    <td>{{ p.category}}</td>
+                    <td>{{ p.price | currency:'USD'}}</td>
+                    <td>{{ p.stock_units}}</td>
+                    <td>
+                        
+                        <button class="btn btn-outline-success mr-1" routerLink="/product-details/{{p.id}}"><i class="fa fa-info"></i></button>
+                        <button type="button" class="btn btn-danger" (click)="deleteProduct(p.id)"><i class="fa fa-trash-o"></i></button>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,22 @@
+<!-- <p>welcome-screen works!</p> -->
+<!-- <app-features></app-features> -->
+<main>
+    <div class="images text-center mt-2">
+      <img src="assets/images/greet1.jpeg" alt="greetings">
+    </div>
+    <div class="Welcome-Screen text-center">
+      <!-- =========Greetings========= -->
+      <div class="greeting mt-1">
+        <h5 class="card-title">{{showGreetings()}}!! {{username}}</h5>
+      </div>
+      <!-- ========Welcome Message========= -->
+      <p class="card-text">We're delighted to have you as our customer. ... </p>
+  
+      <!-- ========= Next Button========= -->
+      <button class="btn btn-outline-success" routerLink="/product-list">Next</button>
+  
+      
+      <router-outlet></router-outlet>
+    </div>
+  
+  </main>

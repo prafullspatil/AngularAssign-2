@@ -1,0 +1,107 @@
+{
+  "Products": [
+    {
+      "product_id": "101",
+      "product_name": "apple",
+      "category": "mobile",
+      "model_no": "AMAALE",
+      "released_date": "2022-04-02",
+      "stock_units": "120",
+      "description": "hii",
+      "price": "1000000",
+      "id": 6
+    },
+    {
+      "product_id": "9",
+      "product_name": "Realme XT",
+      "category": "mobile",
+      "model_no": "AWUWKB",
+      "released_date": "2022-04-08",
+      "stock_units": "15",
+      "description": "Snapdragon 885+",
+      "price": "150000",
+      "id": 8
+    },
+    {
+      "product_id": "12",
+      "product_name": "Redmi note 10",
+      "category": "mobile",
+      "model_no": "DIEO65",
+      "released_date": "2022-04-09",
+      "stock_units": "100",
+      "description": "Meditek 85",
+      "price": "14000",
+      "id": 9
+    },
+    {
+      "product_id": "15",
+      "product_name": "Oneplus 6T",
+      "category": "mobile",
+      "model_no": "KIDHSN17",
+      "released_date": "2022-04-09",
+      "stock_units": "1",
+      "description": "Snapdragon 120hz",
+      "price": "260000",
+      "id": 10
+    },
+    {
+      "product_id": "13",
+      "product_name": "Oneplus 9R",
+      "category": "mobile",
+      "model_no": "snfsljn",
+      "released_date": "2022-04-03",
+      "stock_units": "12",
+      "description": "OnePlus 9R",
+      "price": "350000",
+      "id": 12
+    },
+    {
+      "product_id": "12",
+      "product_name": "Asus Laptop",
+      "category": "laptop",
+      "model_no": "SNKNK91",
+      "released_date": "2022-04-07",
+      "stock_units": "12",
+      "description": "Asus Laptop",
+      "price": "12000",
+      "id": 13
+    },
+    {
+      "product_id": "15",
+      "product_name": "realme 8i",
+      "category": "mobile",
+      "model_no": "FSFSJJ12",
+      "released_date": "2020-02-11",
+      "stock_units": "100",
+      "description": "Realme 8i",
+      "price": "16000",
+      "id": 15
+    },
+    {
+      "product_id": "12",
+      "product_name": "Redmi note 6 pro",
+      "category": "mobile",
+      "model_no": "EFSKJ6",
+      "released_date": "2022-04-14",
+      "stock_units": "12",
+      "description": "Redmi note 6 pro",
+      "price": "16000",
+      "id": 16
+    }
+  ],
+  "login": [
+    {
+      "email":"admin@admin.com",
+      "password":"admin1",
+      "type":"admin",
+      "id":1
+    },
+    {
+      "email":"user@gmail.com",
+      "password":"user123",
+      "type":"user",
+      "id":2
+    }
+
+  ]
+}

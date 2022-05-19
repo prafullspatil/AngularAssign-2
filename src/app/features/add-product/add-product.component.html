@@ -1,0 +1,91 @@
+<div class="container-fluid mt-4 section">
+    <!-- <form #productForm="ngForm" (ngSubmit)="getProductData()"> -->
+    <!-- {{productForm.value | json}} -->
+    <div *ngIf="succMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Success!</strong> Product Added.
+      <button (click)="removeMessage()" class="btn btn-danger" type="button" data-bs-dismiss="alert" aria-label="Close"><i class="fa fa-times-circle"></i></button>
+    </div>
+  
+    
+    <form [formGroup]="addProduct" (ngSubmit)="saveData()">
+      <div class="row justify-content-between text-left">
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <label>Product Id<span style="color:red;"> * </span></label>
+          <input type="text" class="form-control" autocomplete="off" name="product_id" placeholder="Please Enter Product Id"
+            formControlName="product_id" ngModel>
+          <span class="text-danger"
+            *ngIf="addProduct.get('product_id')?.invalid && addProduct.get('product_id')?.touched">
+            Enter Valid Product ID</span>
+        </div>
+  
+  
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <label>Product Name<span style="color:red;"> * </span></label>
+          <input type="text" class="form-control" autocomplete="off" name="product_name" formControlName="product_name"
+            placeholder="Please Enter Product Name">
+          <span class="text-danger"
+            *ngIf="addProduct.get('product_name')?.invalid &&  addProduct.get('product_name')?.touched">
+            Name cannot be longer than 30 characters</span>
+        </div>
+      </div>
+  
+      <div class="row justify-content-between text-left">
+        <div class="form-group  col-sm-6 flex-column d-flex">
+          <label>Category<span style="color:red;"> * </span></label>
+          <select class="form-control" formControlName="category">
+            <option value="" selected>Choose.....</option>
+            <option value="mobile">Mobiles</option>
+            <option value="tv">Tv</option>
+            <option value="laptop">Laptop</option>
+            <option value="Desktop">Desktop</option>
+            <option value="tablets">Tablets</option>
+          </select>
+        </div>
+        <div class="form-group  col-sm-6 flex-column d-flex">
+          <label>Serial / Model Number<span style="color:red;"> * </span></label>
+          <input type="text" class="form-control" autocomplete="off" name="model_no" placeholder="Please Enter Product Model Number"
+            formControlName="model_no" ngModel>
+          <span class="text-danger" *ngIf="addProduct.get('model_no')?.invalid &&  addProduct.get('model_no')?.touched">
+            Enter Valid Model Number</span>
+        </div>
+      </div>
+      <div class="row justify-content-between text-left">
+        <div class="form-group  col-sm-6 flex-column d-flex">
+          <label>Released Date<span style="color:red;"> * </span></label>
+          <input type="date" class="form-control" max="{{ maxDate }}" name="released_date" formControlName="released_date"
+            ngModel>
+        </div>
+        <div class="form-group  col-sm-6 flex-column d-flex">
+          <label>Stocks Units<span style="color:red;"> * </span></label>
+          <input type="text" class="form-control" autocomplete="off" name="stock_units" placeholder="Please Enter Stocks"
+            formControlName="stock_units" ngModel>
+          <span class="text-danger"
+            *ngIf="addProduct.get('stock_units')?.invalid &&  addProduct.get('stock_units')?.touched">
+            Must use Numeric Values</span>
+        </div>
+      </div>
+      <div class="row justify-content-between text-left">
+        <div class="form-group  col-lg-6 flex-column d-flex">
+          <label>Description<span style="color:red;"> * </span></label>
+          <textarea type="text" class="form-control" autocomplete="off" placeholder="Description" name="description"
+            formControlName="description">
+            </textarea>
+          <span class="text-danger"
+            *ngIf="addProduct.get('description')?.invalid &&  addProduct.get('description')?.touched">
+            Sorry You are Exceeding the Limit</span>
+        </div>
+        <div class="form-group  col-sm-6 flex-column d-flex">
+          <label>Price<span style="color:red;"> * </span></label>
+          <input type="text" class="form-control" name="price" autocomplete="off" placeholder="Please Enter Amount" formControlName="price">
+          <span class="text-danger" *ngIf="addProduct.get('price')?.invalid && addProduct.get('price')?.touched">
+            Enter Valid Amount</span>
+  
+        </div>
+      </div>
+  
+      <button [disabled]="!addProduct.valid" class="btn btn-outline-success" type="submit">Submit</button>
+      <button class="btn btn-danger ml-3" type="reset">Reset</button>
+  
+    </form>
+  
+  </div>

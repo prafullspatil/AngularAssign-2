@@ -1,0 +1,93 @@
+<div class="card container-fluid mt-2 shadow" style="width: 40rem;height: 480px;">
+    <div class="card-body">
+        <!-- <h5>Product Details</h5> -->
+      
+      <div class="row justify-content-between text-left">
+      <div class="form-group col-sm-6 flex-column d-flex">
+        <input type="text"class="form-control" value="Product Id:" readonly> 
+      </div>
+      <div class="form-group col-sm-6 flex-column d-flex">
+        <input type="text"class="form-control" value="{{displayProductData.product_id}}" readonly>
+    </div>
+    </div>
+
+    <div class="row justify-content-between text-left">
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <input type="text"class="form-control" value="Product Name:" readonly> 
+        </div>
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <input type="text"class="form-control" value="{{displayProductData.product_name | uppercase}}" readonly>
+      </div>
+      </div>
+
+      <div class="row justify-content-between text-left">
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <input type="text"class="form-control" value="Category:" readonly> 
+        </div>
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <input type="text"class="form-control" value="{{displayProductData.category}}" readonly>
+      </div>
+      </div>
+
+
+      <div class="row justify-content-between text-left">
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <input type="text"class="form-control" value="Serial / Model Number:" readonly> 
+        </div>
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <input type="text"class="form-control" value="{{displayProductData.model_no}}" readonly>
+      </div>
+      </div>
+
+      <div class="row justify-content-between text-left">
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <input type="text"class="form-control" value="Stocks Units:" readonly> 
+        </div>
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <ng-template [ngIf]="displayProductData.stock_unit <=10 || displayProductData.stock_units>3">
+          <input style="color:orange" type="text"class="form-control" value="{{displayProductData.stock_units}} only left" readonly>
+            <!-- <td style="color:red";>:only {{displayProductData.stock_units}} left</td> -->
+          </ng-template>  
+          <ng-template [ngIf]="displayProductData.stock_unit<=3">
+            <input style="color:red" type="text" class="form-control" value="{{displayProductData.stock_units}} only " readonly>
+            
+              <!-- <td style="color:red";>:only {{displayProductData.stock_units}} left</td> -->
+            </ng-template>
+            <ng-template [ngIf]="displayProductData.stock_unit>=10">
+              <input style="color:green" type="text" class="form-control" value="{{displayProductData.stock_units}} Available" readonly>
+              
+                <!-- <td style="color:red";>:only {{displayProductData.stock_units}} left</td> -->
+              </ng-template>
+      </div>
+      </div>
+
+      <div class="row justify-content-between text-left">
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <input type="text"class="form-control" value="Released Date:" readonly>  
+        </div>
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <input type="text"class="form-control" value="{{displayProductData.released_date | date:'mediumDate'}}" readonly>
+      </div>
+      </div>
+
+      <div class="row justify-content-between text-left">
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <input type="text"class="form-control" value="Description" readonly> 
+        </div>
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <textarea type="text"class="form-control" value="{{displayProductData.description}}" readonly></textarea>
+      </div>
+      </div>
+
+      <div class="row justify-content-between text-left">
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <input type="text"class="form-control" value="Price:"readonly> 
+        </div>
+        <div class="form-group col-sm-6 flex-column d-flex">
+          <input type="text"class="form-control" value="{{displayProductData.price | currency:'USD'}}" readonly>
+              
+      </div>
+      </div>
+
+
+  </div>
